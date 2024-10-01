@@ -15,8 +15,28 @@
           <img class="h-14" src="logo.png" alt="Logo" />
         </div>
 
+        <div class="md:hidden">
+          <button id="menu-button" class="text-black focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
         <div
-          class="nav-links md:w-auto w-full flex items-center px-5 md:flex-row flex-col"
+          id="nav-links"
+          class="nav-links md:w-auto w-full flex items-center md:flex-row flex-col hidden md:flex"
         >
           <ul
             class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8"
@@ -57,13 +77,61 @@
           </button>
         </div>
       </nav>
+
+      <div id="mobile-menu" class="hidden md:hidden">
+        <ul class="flex flex-col items-center bg-white shadow-md">
+          <li>
+            <a
+              class="hover:text-gray-500 text-black font-medium py-2 px-4"
+              href="#"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-gray-500 text-black font-medium py-2 px-4"
+              href="#"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-gray-500 text-black font-medium py-2 px-4"
+              href="#"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-gray-500 text-black font-medium py-2 px-4"
+              href="#"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-gray-500 text-black font-medium py-2 px-4"
+              href="#"
+              >Blogs</a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
 
+    <script>
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
 
     <!-- Hero page -->
-    <div class="bg-white-100 py-10">
-      <div class="container mx-auto grid grid-cols-2 gap-6 px-5">
-        <div class="flex flex-col justify-center">
+    <div class="bg-white py-10">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-5">
+        <div class="flex flex-col justify-center text-center md:text-left">
           <h1 class="text-5xl font-bold text-gray-900 mb-4">HER</h1>
           <p class="text-lg text-gray-700 mb-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
@@ -72,24 +140,22 @@
             cupiditate rerum beatae. Similique, culpa!
           </p>
           <button
-            class="bg-pink-500 text-white px-2 py-2 rounded-full hover:bg-red-500 transition duration-300 "
+            class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-red-500 transition duration-300"
           >
             Read More
           </button>
         </div>
-    
+
         <div class="flex items-center justify-center">
           <img
             src="image.JPG"
             alt="Descriptive text"
-            class="max-w-full h-auto" 
+            class="max-w-full h-auto rounded-lg"
           />
         </div>
       </div>
     </div>
-    
-
-
+    <!-- end of hero -->
 
     <!-- Services -->
     <div class="container mx-auto py-12">
